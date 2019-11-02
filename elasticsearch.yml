@@ -1,0 +1,26 @@
+# Cluster name identifies your cluster for auto-discovery. If you're running
+# multiple clusters on the same network, make sure you're using unique names.
+
+cluster.name: telekomatrix
+node.name: master-1
+
+# Enabling master node
+node.master: true
+node.data: false
+node.ingest: false
+
+# Path to directory where to store index data allocated for this node.
+path.data: /path/to/data
+
+# Path to log files:
+path.logs: /path/to/logs
+
+network.host: 0.0.0.0
+
+gateway.recover_after_nodes: 1
+
+discovery.seed_hosts: ["master2","master3"]
+cluster.initial_master_nodes:
+  - master-1
+  - master-2
+  - master-3
